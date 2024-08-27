@@ -23,6 +23,8 @@ public class CreateNewCustomerImpl implements CreateNewCustomer {
 
         findStoreById.execute(customerDomain.getIdStore());
         customerDomain.setCpf(customerDomain.getCpf().replaceAll("[^0-9]", ""));
+        customerDomain.setName(customerDomain.getName());
+        customerDomain.setEmail(customerDomain.getEmail());
 
         return customerPersistence.save(customerDomain);
     }

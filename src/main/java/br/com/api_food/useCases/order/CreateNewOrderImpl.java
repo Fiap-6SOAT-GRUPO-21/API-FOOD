@@ -42,7 +42,8 @@ public class CreateNewOrderImpl implements CreateNewOrder {
         orderDomain.validatedItemOrException(findProductByIdAndIdStore);
 
         if (cpf != null) {
-            CustomerDomain customerDomain = findCustomerByCPF.execute(cpf);
+            CustomerDomain customerDomain = findCustomerByCPF.execute(cpf);//caso não exista
+            //createnewCustomer.execute
             orderDomain.setIdCustomer(customerDomain.getId());
             orderDomain.setCustomer(customerDomain);
         }
