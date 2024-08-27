@@ -24,10 +24,10 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Tag Docker image
-        run: docker tag api-food:latest josevitordurante/api-food:latest
+        run: docker tag api-food:latest ${{ secrets.DOCKER_USERNAME }}/api-food:latest
 
       - name: Push Docker image
-        run: docker push josevitordurante/api-food:latest
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/api-food:latest
 
   deploy:
     needs: build
@@ -46,6 +46,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
           aws-region: us-east-1
 
       - name: Update kubeconfig
