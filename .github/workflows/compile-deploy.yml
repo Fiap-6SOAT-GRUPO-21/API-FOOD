@@ -3,8 +3,6 @@ name: Build, Deploy and Apply to EKS
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
   workflow_dispatch:
 
 jobs:
