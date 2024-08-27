@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: api-food-config
 data:
-  notification-url: ""
+  NOTIFICATION_URL: ""
   DB_NAME: ""
   DB_URL: ""
   DB_USERNAME: ""
