@@ -4,3 +4,8 @@ metadata:
   name: api-food-config
 data:
   notification-url: ""
+  DB_NAME: ""
+  DB_URL: ""
+  DB_USERNAME: ""
+  DB_PASSWORD: ""
+  DB_PORT: ""

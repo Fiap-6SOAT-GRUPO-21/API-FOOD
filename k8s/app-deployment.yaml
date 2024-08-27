@@ -50,12 +50,31 @@ spec:
           ports:
             - containerPort: 8088
           env:
-            - name: PORT
-              value: "8088"
-            - name: DB_HOST
-              value: postgresql-service
+            - name: DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: api-food-config
+                  key: DB_NAME
+            - name: DB_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: api-food-config
+                  key: DB_URL
             - name: DB_PORT
-              value: "5432"
+              valueFrom:
+                configMapKeyRef:
+                  name: api-food-config
+                  key: DB_PORT
+            - name: DB_USERNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: api-food-config
+                  key: DB_USERNAME
+            - name: DB_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: api-food-config
+                  key: DB_PASSWORD
             - name: NOTIFICATION_URL
               valueFrom:
                 configMapKeyRef:
