@@ -9,3 +9,12 @@ data:
   DB_USERNAME: ""
   DB_PASSWORD: ""
   DB_PORT: ""
+
+
+
+#  rodando localmente
+#  DB_URL: "postgresql-service"
+#  DB_PORT: 5432
+#  DB_USERNAME: postgres
+#  DB_PASSWORD: postgres
+#  DB_NAME: apifood

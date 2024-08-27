@@ -50,6 +50,8 @@ spec:
           ports:
             - containerPort: 8088
           env:
+            - name: PORT
+              value: "8088"
             - name: DB_NAME
               valueFrom:
                 configMapKeyRef:
