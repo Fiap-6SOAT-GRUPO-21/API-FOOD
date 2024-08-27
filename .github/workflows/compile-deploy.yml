@@ -24,7 +24,7 @@ jobs:
         run: mvn clean package
 
       - name: Build Docker image
-        run: docker build -t my-docker-repo/spring-app:latest .
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/api-food:latest .
 
       - name: Login to DockerHub
         uses: docker/login-action@v1
@@ -33,7 +33,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Push Docker image
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/spring-app:latest
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/api-food:latest
 
   deploy:
     needs: build
