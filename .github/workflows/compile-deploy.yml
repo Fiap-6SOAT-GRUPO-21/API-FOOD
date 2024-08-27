@@ -73,7 +73,7 @@ jobs:
 
       - name: Update ConfigMap with RDS credentials
         run: |
-          kubectl apply -f configmap.yaml
+          kubectl apply -f k8s/app-configmap.yaml
           kubectl patch configmap api-food-config --type=json -p='[{"op": "replace", "path": "/data/DB_NAME", "value":"'"$DB_NAME"'"}]'
           kubectl patch configmap api-food-config --type=json -p='[{"op": "replace", "path": "/data/DB_URL", "value":"'"$DB_URL"'"}]'
           kubectl patch configmap api-food-config --type=json -p='[{"op": "replace", "path": "/data/DB_USERNAME", "value":"'"$DB_USERNAME"'"}]'
@@ -82,7 +82,6 @@ jobs:
 
       - name: Deploy Application
         run: |
-          kubectl apply -f k8s/app-configmap.yaml
           kubectl apply -f k8s/app-deployment.yaml
           kubectl apply -f k8s/app-service.yaml
           kubectl apply -f k8s/app-hpa.yaml
