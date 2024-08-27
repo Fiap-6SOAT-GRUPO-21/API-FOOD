@@ -7,9 +7,9 @@ spring:
   application:
     name: api-food-service
   datasource:
-    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/api-food
-    username: postgres
-    password: postgres
+    url: jdbc:postgresql://${DB_URL:localhost}:${DB_PORT:5432}/${DB_NAME:apifood}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
   jpa:
     properties:
       hibernate:

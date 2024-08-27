@@ -43,24 +43,43 @@ spec:
               echo "Load Balancer IP obtido: $EXTERNAL_IP"
 
               # Atualiza o ConfigMap com a nova URL
-              kubectl create configmap api-food-config --from-literal=notification-url=http://$EXTERNAL_IP/order/notifications --dry-run=client -o yaml | kubectl apply -f -
+              kubectl patch configmap api-food-config --type=merge -p='{"data": {"NOTIFICATION_URL": "http://'"$EXTERNAL_IP"'/order/notifications"}}'
       containers:
         - name: api-food
           image: josevitordurante/api-food:latest
           ports:
             - containerPort: 8088
           env:
-            - name: PORT
-              value: "8088"
-            - name: DB_HOST
-              value: postgresql-service
+            - name: DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: api-food-config
+                  key: DB_NAME
+            - name: DB_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: api-food-config
+                  key: DB_URL
             - name: DB_PORT
-              value: "5432"
+              valueFrom:
+                configMapKeyRef:
+                  name: api-food-config
+                  key: DB_PORT
+            - name: DB_USERNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: api-food-config
+                  key: DB_USERNAME
+            - name: DB_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: api-food-config
+                  key: DB_PASSWORD
             - name: NOTIFICATION_URL
               valueFrom:
                 configMapKeyRef:
                   name: api-food-config
-                  key: notification-url
+                  key: NOTIFICATION_URL
           resources:
             requests:
               memory: "128Mi"
