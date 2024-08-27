@@ -13,7 +13,7 @@ docker build -t api-food:latest .
 2. Verficar se a imagem foi criada corretamente
 
 ```bash
-docker images | grep api-food
+
 ```
 
 3. Caso queira deletar a imagem

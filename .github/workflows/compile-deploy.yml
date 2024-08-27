@@ -14,15 +14,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-#      - name: Set up JDK 21
-#        uses: actions/setup-java@v2
-#        with:
-#          distribution: 'temurin'
-#          java-version: '21'
-#
-#      - name: Build with Maven
-#        run: mvn clean package
-
       - name: Build Docker image
         run: docker build -t api-food:latest .
 
@@ -33,10 +24,10 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Tag Docker image
-        run: docker tag api-food:latest ${{ secrets.DOCKER_USERNAME }}/api-food:latest
+        run: docker tag api-food:latest josevitordurante/api-food:latest
 
       - name: Push Docker image
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/api-food:latest
+        run: docker push josevitordurante/api-food:latest
 
   deploy:
     needs: build
