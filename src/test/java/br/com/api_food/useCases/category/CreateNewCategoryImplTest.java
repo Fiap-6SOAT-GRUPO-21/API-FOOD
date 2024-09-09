@@ -1,9 +1,7 @@
 package br.com.api_food.useCases.category;
 
 import br.com.api_food.domain.persistence.category.CategoryPersistence;
-import br.com.api_food.domain.useCases.category.CreateNewCategory;
 import br.com.api_food.domain.useCases.store.FindStoreById;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
