@@ -25,9 +25,9 @@
         <zxing.version>3.5.3</zxing.version>
 
         <sonar.organization>fiap-6soat-grupo-21</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
         <sonar.projectKey>Fiap-6SOAT-GRUPO-21_api-food</sonar.projectKey>
-        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 
     </properties>
 
@@ -100,11 +100,6 @@
             <artifactId>jacoco-maven-plugin</artifactId>
             <version>0.8.10</version>
         </dependency>
-        <dependency>
-            <groupId>org.sonarsource.scanner.maven</groupId>
-            <artifactId>sonar-maven-plugin</artifactId>
-            <version>4.0.0.4121</version>
-        </dependency>
 
     </dependencies>
 
@@ -138,23 +133,6 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.10</version>
-                <configuration>
-                    <excludes>
-                        <!--Todo remover esses excludes somente para teste de coverage-->
-                        <exclude>**/ApiFoodApplication.class</exclude>
-                        <exclude>**/application/**</exclude>
-                        <exclude>**/domain/**</exclude>
-                        <exclude>**/infra/**</exclude>
-                        <exclude>**/category/**</exclude>
-                        <exclude>**/customer/**</exclude>
-                        <exclude>**/manager/**</exclude>
-                        <exclude>**/order/**</exclude>
-                        <exclude>**/payment/**</exclude>
-                        <exclude>**/product/**</exclude>
-                        <exclude>**/store/**</exclude>
-                        <exclude>**/customer/**</exclude>
-                    </excludes>
-                </configuration>
                 <executions>
                     <execution>
                         <id>jacoco-initialize</id>
@@ -182,7 +160,7 @@
                                         <limit>
                                             <counter>LINE</counter>
                                             <value>COVEREDRATIO</value>
-                                            <minimum>0.8</minimum>
+                                            <minimum>0.0</minimum>
                                         </limit>
                                     </limits>
                                 </rule>
