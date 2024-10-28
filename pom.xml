@@ -23,9 +23,12 @@
         <modelmapper.version>3.2.0</modelmapper.version>
         <openfeign.version>4.1.1</openfeign.version>
         <zxing.version>3.5.3</zxing.version>
+
         <sonar.organization>fiap-6soat-grupo-21</sonar.organization>
         <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
         <sonar.projectKey>Fiap-6SOAT-GRUPO-21_api-food</sonar.projectKey>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+
     </properties>
 
     <dependencies>
