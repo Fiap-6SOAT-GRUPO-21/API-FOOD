@@ -34,10 +34,8 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Build and run tests with JaCoCo
         run: mvn -B clean verify
-      - name: List all files in the target directory
-        run: find target -type f
       - name: Run SonarCloud analysis
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Fiap-6SOAT-GRUPO-21_api-food -Dsonar.coverage.jacoco.xmlReportPaths=${project.build.directory}/site/jacoco/jacoco.xml
+        run: mvn -B org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Fiap-6SOAT-GRUPO-21_api-food -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
