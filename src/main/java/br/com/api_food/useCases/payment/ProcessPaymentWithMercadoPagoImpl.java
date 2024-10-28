@@ -11,7 +11,7 @@ import br.com.api_food.domain.entity.payment.enums.PaymentType;
 import br.com.api_food.domain.entity.store.StoreDomain;
 import br.com.api_food.domain.useCases.payment.ProcessPayment;
 import br.com.api_food.domain.useCases.store.FindStoreById;
-import br.com.api_food.infra.gateways.payment.MercadoPagoClient;
+import br.com.api_food.infra.gateways.external.payment.MercadoPagoClient;
 import br.com.api_food.infra.persistence.entities.store.StoreEntity;
 import br.com.api_food.useCases.util.DateTimeUtils;
 import org.modelmapper.ModelMapper;

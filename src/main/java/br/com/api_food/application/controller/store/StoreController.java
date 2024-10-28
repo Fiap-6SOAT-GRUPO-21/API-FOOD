@@ -6,6 +6,7 @@ import br.com.api_food.domain.entity.store.StoreDomain;
 import br.com.api_food.domain.useCases.store.CreateNewStore;
 import br.com.api_food.domain.useCases.store.DeleteStoreById;
 import br.com.api_food.domain.useCases.store.FindAllStores;
+import br.com.api_food.domain.useCases.store.FindStoreById;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -26,6 +27,7 @@ public class StoreController {
 
     private final CreateNewStore createNewStore;
     private final FindAllStores findAllStores;
+    private final FindStoreById findStoreById;
     private final DeleteStoreById deleteStoreById;
     private final ModelMapper modelMapper;
 
@@ -36,6 +38,14 @@ public class StoreController {
         StoreDomain savedPessoa = createNewStore.execute(domain);
         StoreDTO dto = modelMapper.map(savedPessoa, StoreDTO.class);
         return ResponseEntity.status(HttpStatus.CREATED).body(dto);
+    }
+
+    @Operation(summary = "Get store by id")
+    @GetMapping("/{id}")
+    public ResponseEntity<StoreDTO> getById(@PathVariable UUID id) {
+        StoreDomain storeDomain = findStoreById.execute(id);
+        StoreDTO storeDTO = modelMapper.map(storeDomain, StoreDTO.class);
+        return ResponseEntity.ok(storeDTO);
     }
 
     @Operation(summary = "Get all stores")
