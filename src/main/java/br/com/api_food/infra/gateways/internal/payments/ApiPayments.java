@@ -4,7 +4,7 @@ import br.com.api_food.infra.interceptor.DefaultInterceptor;
 import org.springframework.cloud.openfeign.FeignClient;
 
 @FeignClient(name = "internal-api-payments",
-        url = "${api-url.api-payment}",
+        url = "${api.url.api-payment}",
         configuration = DefaultInterceptor.class
 )
 public interface ApiPayments {
