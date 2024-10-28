@@ -1,10 +1,12 @@
 name: SonarCloud
+
 on:
   push:
     branches: [ "main" ]
   pull_request:
     types: [opened, synchronize, reopened]
   workflow_dispatch:
+
 jobs:
   build:
     name: Build and analyze
@@ -30,8 +32,10 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
-      - name: Build and analyze
+      - name: Build and run tests with JaCoCo
+        run: mvn -B clean verify
+      - name: Run SonarCloud analysis
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Fiap-6SOAT-GRUPO-21_api-food -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
+        run: mvn -B org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Fiap-6SOAT-GRUPO-21_api-food -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
