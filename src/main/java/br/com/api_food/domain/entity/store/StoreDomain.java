@@ -1,7 +1,6 @@
 package br.com.api_food.domain.entity.store;
 
 import br.com.api_food.domain.entity.DomainEntity;
-import br.com.api_food.domain.entity.store.payment.MercadoPagoGatewayDomain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -21,7 +20,4 @@ public class StoreDomain extends DomainEntity {
     private boolean active = true;
 
     private UUID idMercadoPagoGateway;
-
-    private MercadoPagoGatewayDomain mercadoPagoGateway;
-
 }
