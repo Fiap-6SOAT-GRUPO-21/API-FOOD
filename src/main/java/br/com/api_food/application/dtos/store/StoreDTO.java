@@ -21,6 +21,9 @@ public class StoreDTO {
     @NotNull
     private String name;
 
+    @NotNull
+    private boolean active = true;
+
     @Schema(description = "Gateway de pagamento do Mercado Pago")
     private MercadoPagoGatewayDTO mercadoPagoGateway;
 
