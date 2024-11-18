@@ -52,6 +52,21 @@ spec:
                 configMapKeyRef:
                   name: api-food-config
                   key: NOTIFICATION_URL
+            - name: API_FOOD_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: api-food-config
+                  key: API_FOOD_URL
+            - name: API_ORDER_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: api-food-config
+                  key: API_ORDER_URL
+            - name: API_PAYMENT_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: api-food-config
+                  key: API_PAYMENT_URL
           resources:
             requests:
               memory: "128Mi"
