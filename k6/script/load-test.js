@@ -1,16 +1,16 @@
 import http from 'k6/http';
-import { sleep, check } from 'k6';
+import {check, sleep} from 'k6';
 
 export let options = {
     stages: [
-        { duration: '2m', target: 100 }, // ramp up to 100 users
-        { duration: '5m', target: 100 }, // stay at 100 users for 5 minutes
-        { duration: '2m', target: 0 },    // ramp down to 0 users
+        {duration: '2m', target: 100}, // ramp up to 100 users
+        {duration: '5m', target: 100}, // stay at 100 users for 5 minutes
+        {duration: '2m', target: 0},    // ramp down to 0 users
     ],
 };
 
 export default function () {
     let response = http.get('https://warm-sheepdog-secondly.ngrok-free.app/order/all');
-    check(response, { 'status was 200': (r) => r.status === 200 });
+    check(response, {'status was 200': (r) => r.status === 200});
     sleep(1);
 }

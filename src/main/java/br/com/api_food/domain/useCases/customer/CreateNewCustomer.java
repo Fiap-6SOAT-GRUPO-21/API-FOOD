@@ -4,5 +4,5 @@ import br.com.api_food.domain.entity.customer.CustomerDomain;
 
 public interface CreateNewCustomer {
 
-   CustomerDomain execute(CustomerDomain customerDomain);
+    CustomerDomain execute(CustomerDomain customerDomain);
 }

@@ -13,6 +13,7 @@ import java.util.List;
 public class FindAllCustomersImpl implements FindAllCustomers {
 
     private final CustomerPersistence customerPersistencePort;
+
     @Override
     public List<CustomerDomain> execute() {
         return customerPersistencePort.findAll();

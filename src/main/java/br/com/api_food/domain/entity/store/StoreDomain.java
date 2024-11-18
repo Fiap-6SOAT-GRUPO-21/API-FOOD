@@ -23,5 +23,4 @@ public class StoreDomain extends DomainEntity {
     private UUID idMercadoPagoGateway;
 
     private MercadoPagoGatewayDomain mercadoPagoGateway;
-
 }

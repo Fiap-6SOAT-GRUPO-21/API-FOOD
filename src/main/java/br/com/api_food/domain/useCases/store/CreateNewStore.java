@@ -4,5 +4,5 @@ import br.com.api_food.domain.entity.store.StoreDomain;
 
 public interface CreateNewStore {
 
-   StoreDomain execute(StoreDomain storeDomain);
+    StoreDomain execute(StoreDomain storeDomain);
 }

@@ -1,8 +1,6 @@
 package br.com.api_food.application.handler;
 
 import br.com.api_food.useCases.category.exceptions.ExistProductInCategory;
-import br.com.api_food.useCases.order.exceptions.CustomerInOrderNotFound;
-import br.com.api_food.useCases.order.exceptions.ProductInOrderNotFound;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -30,23 +28,6 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         body.put(MESSAGE, ex.getMessage());
 
         return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
-    }
-
-    @ExceptionHandler(CustomerInOrderNotFound.class)
-    public ResponseEntity<Object> handleCustomerInOrderNotFound(CustomerInOrderNotFound ex) {
-        Map<String, Object> body = new LinkedHashMap<>();
-        body.put(MESSAGE, ex.getMessage());
-        body.put("redirect", "/customer");
-
-        return new ResponseEntity<>(body, HttpStatus.FOUND);
-    }
-
-    @ExceptionHandler(ProductInOrderNotFound.class)
-    public ResponseEntity<Object> handleProductInOrderNotFound(ProductInOrderNotFound ex) {
-        Map<String, Object> body = new LinkedHashMap<>();
-        body.put(MESSAGE, ex.getMessage());
-
-        return new ResponseEntity<>(body, HttpStatus.FOUND);
     }
 
     @ExceptionHandler(ConstraintViolationException.class)
