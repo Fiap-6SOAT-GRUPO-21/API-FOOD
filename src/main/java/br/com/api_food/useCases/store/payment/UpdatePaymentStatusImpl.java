@@ -5,7 +5,7 @@ import br.com.api_food.domain.entity.payment.PaymentDomain;
 import br.com.api_food.domain.entity.payment.enums.PaymentStatus;
 import br.com.api_food.domain.useCases.payment.FindPaymentById;
 import br.com.api_food.domain.useCases.payment.UpdatePaymentStatus;
-import br.com.api_food.infra.gateways.payment.MercadoPagoClient;
+import br.com.api_food.infra.gateways.external.payment.MercadoPagoClient;
 import br.com.api_food.infra.persistence.repositories.payment.PaymentPersistencePortImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -1,16 +1,16 @@
-package br.com.api_food.infra.gateways.payment;
+package br.com.api_food.infra.gateways.external.payment;
 
-import br.com.api_food.application.config.FeignConfig;
 import br.com.api_food.application.dtos.integration.mercadopago.payment.request.MercadoPagoRequest;
 import br.com.api_food.application.dtos.integration.mercadopago.payment.response.MercadoPagoResponse;
 import br.com.api_food.application.dtos.integration.mercadopago.payment.response.MerchantOrderResponse;
+import br.com.api_food.infra.interceptor.DefaultInterceptor;
 import feign.Headers;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
 @FeignClient(name = "mercadoPagoClient",
         url = "${mercado-pago.url}",
-        configuration = FeignConfig.class
+        configuration = DefaultInterceptor.class
 )
 public interface MercadoPagoClient {
 
