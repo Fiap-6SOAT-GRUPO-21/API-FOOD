@@ -14,6 +14,7 @@ import java.util.UUID;
 public class FindStoreByIdImpl implements FindStoreById {
 
     final StorePersistence storePersistence;
+
     @Override
     public StoreDomain execute(UUID id) {
         return storePersistence.findById(id)

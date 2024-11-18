@@ -26,7 +26,7 @@ class CreateNewCategoryImplTest {
 
     @Test
     void contextLoads() {
-        assert(true);
+        assert (true);
     }
 
 }

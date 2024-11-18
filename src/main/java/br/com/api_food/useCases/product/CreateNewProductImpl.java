@@ -1,11 +1,11 @@
 package br.com.api_food.useCases.product;
 
-import br.com.api_food.useCases.product.exceptions.ProductInvalidPrice;
 import br.com.api_food.domain.entity.product.ProductDomain;
 import br.com.api_food.domain.persistence.product.ProductPersistence;
 import br.com.api_food.domain.useCases.category.FindCategoryById;
 import br.com.api_food.domain.useCases.product.CreateNewProduct;
 import br.com.api_food.domain.useCases.store.FindStoreById;
+import br.com.api_food.useCases.product.exceptions.ProductInvalidPrice;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

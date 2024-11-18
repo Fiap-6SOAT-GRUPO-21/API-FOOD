@@ -9,8 +9,8 @@ volumes:
   pgdata:
 
 services:
-  db_postgres:
-    container_name: db_postgres
+  db_postgres_food:
+    container_name: db_postgres_food
     image: 'postgres:13.4'
     environment:
       - POSTGRES_USER=postgres
@@ -18,7 +18,6 @@ services:
       - POSTGRES_DB=apifood
     ports:
       - "5432:5432"
-      - '5005:5005'
     networks:
       - api-food-network
     volumes:

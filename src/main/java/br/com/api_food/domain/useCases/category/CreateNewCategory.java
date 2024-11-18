@@ -4,5 +4,5 @@ import br.com.api_food.domain.entity.category.CategoryDomain;
 
 public interface CreateNewCategory {
 
-   CategoryDomain execute(CategoryDomain categoryDomain);
+    CategoryDomain execute(CategoryDomain categoryDomain);
 }

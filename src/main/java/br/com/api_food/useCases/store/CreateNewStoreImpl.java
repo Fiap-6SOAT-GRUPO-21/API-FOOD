@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 public class CreateNewStoreImpl implements CreateNewStore {
 
     private final StorePersistence storePersistence;
+
     @Override
     public StoreDomain execute(StoreDomain storeDomain) {
         storeDomain = storePersistence.save(storeDomain);

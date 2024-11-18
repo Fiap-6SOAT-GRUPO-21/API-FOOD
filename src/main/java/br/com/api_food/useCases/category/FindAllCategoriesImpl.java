@@ -13,6 +13,7 @@ import java.util.List;
 public class FindAllCategoriesImpl implements FindAllCategories {
 
     private final CategoryPersistence categoryPersistence;
+
     @Override
     public List<CategoryDomain> execute() {
         return categoryPersistence.findAll();

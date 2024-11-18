@@ -13,6 +13,7 @@ import java.util.List;
 public class FindAllProductsImpl implements FindAllProducts {
 
     private final ProductPersistence productPersistence;
+
     @Override
     public List<ProductDomain> execute() {
         return productPersistence.findAll();
