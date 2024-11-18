@@ -169,7 +169,6 @@ kubectl logs -f <nome-do-pod>
 
 ```bash
 kubectl logs <pod-name> -c wait-for-lb
-kubectl logs api-food-5474cd965b-kxp8z -c wait-for-lb
 ```
 
 ## Deletar os recursos
