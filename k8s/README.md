@@ -13,7 +13,7 @@ docker build -t api-food:latest .
 2. Verficar se a imagem foi criada corretamente
 
 ```bash
-
+docker images | grep api-food
 ```
 
 3. Caso queira deletar a imagem
@@ -33,9 +33,6 @@ docker push josevitordurante/api-food:latest
 
 Para implantar a aplicação localmente usando Minikube, você precisa aplicar os arquivos de configuração do Kubernetes
 YAML. Siga estas etapas:
-
-#### Atenção: Troque para "local" o valor da variável de ambiente `ENVIRONMENT_DEPLOY` no arquivo
-`app-deployment.yaml`para rodar localmente sem rodar o script de init para setar a url de notificação do mercado pago
 
 1. Certifique-se de ter o `minikube` e o `kubectl` instalados na sua máquina.
 

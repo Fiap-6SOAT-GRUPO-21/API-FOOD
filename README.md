@@ -1,5 +1,7 @@
 # Tech Challenge
 
+## MicroServiço de API Food - Responsável por Categoria, Produto, Cliente, Loja
+
 Este é um projeto desenvolvido como parte do MBA da FIAP. Trata-se de uma aplicação Java para gerenciamento de pedidos,
 utilizando Postgres para persistência de dados e Maven para gerenciamento de dependências.
 
@@ -7,6 +9,16 @@ utilizando Postgres para persistência de dados e Maven para gerenciamento de de
 
 O projeto é uma aplicação de pedidos, onde os usuários podem criar, atualizar e excluir pedidos. Cada pedido pode conter
 vários itens, e cada item está associado a um pedido.
+
+## Coberta de Testes
+
+A cobertura de testes do projeto é de 80%. Utilizando SonarQube para análise de código e cobertura de testes.
+
+## Branches
+
+O projeto possui duas branches principais:
+- **main**: contém o código de produção.
+- **develop**: contém o código em desenvolvimento.
 
 ### Video de apresentação da arquitetura do projeto
 
