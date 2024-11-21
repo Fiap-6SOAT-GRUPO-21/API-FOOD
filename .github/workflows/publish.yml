@@ -36,9 +36,9 @@ jobs:
           kubectl delete service api-food-service -n default
           kubectl delete pod -l app=api-food -n default
           kubectl delete hpa app-hpa-api-food -n default
-          kubectl delete rolebinding -l app=service-and-configmap-access-binding-food -n default
+          kubectl delete rolebinding -l app=api-food -n default
           kubectl delete configmap api-food-config -n default
-          kubectl delete rolebinding -l app=api-payments -n default
+          kubectl delete rolebinding -l app=api-food -n default
 
 
       - name: Get RDS credentials from SSM Parameter Store
