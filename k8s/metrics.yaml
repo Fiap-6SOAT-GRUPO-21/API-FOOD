@@ -3,7 +3,7 @@ kind: ServiceAccount
 metadata:
   labels:
     k8s-app: metrics-server
-  name: metrics-server
+  name: metrics-server-food
   namespace: kube-system
 ---
 apiVersion: rbac.authorization.k8s.io/v1
