@@ -28,7 +28,9 @@
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
         <sonar.projectKey>Fiap-6SOAT-GRUPO-21_api-food</sonar.projectKey>
-
+        <sonar.coverage.exclusions>**/application/**</sonar.coverage.exclusions>
+        <sonar.coverage.exclusions>**/domain/**</sonar.coverage.exclusions>
+        <sonar.coverage.exclusions>**/infra/**</sonar.coverage.exclusions>
     </properties>
 
     <dependencies>
@@ -133,6 +135,13 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.10</version>
+                <configuration>
+                    <excludes>
+                        <exclude>**/application/**</exclude>
+                        <exclude>**/domain/**</exclude>
+                        <exclude>**/infra/**</exclude>
+                    </excludes>
+                </configuration>
                 <executions>
                     <execution>
                         <id>jacoco-initialize</id>
