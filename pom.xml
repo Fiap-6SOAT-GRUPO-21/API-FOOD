@@ -29,6 +29,7 @@
         <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
         <sonar.projectKey>Fiap-6SOAT-GRUPO-21_api-food</sonar.projectKey>
         <sonar.coverage.exclusions>**/application/**</sonar.coverage.exclusions>
+        <sonar.coverage.exclusions>**/application/dto/**</sonar.coverage.exclusions>
         <sonar.coverage.exclusions>**/domain/**</sonar.coverage.exclusions>
         <sonar.coverage.exclusions>**/infra/**</sonar.coverage.exclusions>
     </properties>
